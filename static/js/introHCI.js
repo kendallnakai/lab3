@@ -15,4 +15,18 @@ function initializePage() {
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
+	$("#testjs").text("Please wait...");
+	$(".jumbotron p").addClass("active");
+
 }
+
+function projectClick(e) {
+	e.preventDefault();
+	var containingProject = $(this).closest(".project");
+	var description = $(containingProject).find(".project-description");
+	if (description.length == 0) {
+		$(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>");
+	} else {
+		$("#myelement").hide();
+	}
+ }
